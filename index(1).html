@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Name | Motion Graphics & Visual Design</title>
+<meta name="description" content="Portfolio of a Motion Graphics Artist, Video Editor, Graphic Designer and Visual Branding Specialist with 7+ years of experience.">
+
+<style>
+:root{
+  --bg:#0a0a0a;
+  --surface:#111111;
+  --surface2:#171717;
+  --text:#f5f5f5;
+  --muted:#a3a3a3;
+  --line:#262626;
+  --accent:#d7ff3f;
+  --max:1240px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.55;
+}
+a{color:inherit;text-decoration:none}
+img{display:block;max-width:100%}
+.container{width:min(var(--max),calc(100% - 48px));margin:auto}
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(10,10,10,.78);backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07)
+}
+.nav-inner{height:76px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-weight:800;letter-spacing:-.04em;font-size:20px}
+.logo span{color:var(--accent)}
+.nav-links{display:flex;gap:28px;font-size:13px;color:#cfcfcf}
+.nav-links a:hover{color:var(--accent)}
+.menu{display:none;background:none;border:0;color:white;font-size:25px}
+.hero{
+  min-height:100vh;display:flex;align-items:center;
+  padding:140px 0 90px;position:relative;overflow:hidden;
+}
+.hero:before{
+  content:"";position:absolute;width:650px;height:650px;border-radius:50%;
+  background:radial-gradient(circle,rgba(215,255,63,.10),transparent 68%);
+  right:-180px;top:80px;pointer-events:none
+}
+.kicker{color:var(--accent);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:22px}
+h1{font-size:clamp(54px,9vw,116px);line-height:.91;letter-spacing:-.075em;max-width:1000px}
+.hero-sub{font-size:clamp(19px,2.3vw,28px);color:#d1d1d1;max-width:850px;margin:34px 0 26px}
+.hero-note{color:var(--muted);max-width:780px;font-size:15px}
+.buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:34px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 20px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:700;transition:.25s}
+.btn.primary{background:var(--accent);color:#090909;border-color:var(--accent)}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+section{padding:105px 0;border-top:1px solid var(--line)}
+.section-head{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:38px}
+.eyebrow{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:9px}
+h2{font-size:clamp(36px,5vw,68px);letter-spacing:-.06em;line-height:.95}
+.section-intro{max-width:510px;color:var(--muted);font-size:14px}
+.feature{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#050505}
+.video-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.project-info{padding:24px}
+.project-info h3{font-size:24px;letter-spacing:-.03em}
+.project-info p{color:var(--muted);font-size:14px;margin-top:7px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-5px);border-color:#444}
+.card .project-info{padding:19px}
+.card h3{font-size:19px}
+.card p{font-size:13px}
+.vertical-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.vertical .video-wrap{aspect-ratio:9/16}
+.vertical .project-info{padding:16px}
+.vertical .project-info h3{font-size:17px}
+.image-grid{columns:3 260px;column-gap:16px}
+.image-card{break-inside:avoid;margin:0 0 16px;background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;cursor:pointer}
+.image-card img{width:100%;height:auto;transition:.4s}
+.image-card:hover img{transform:scale(1.025)}
+.image-caption{padding:14px;font-size:13px;color:#ddd}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px}
+.about-big{font-size:clamp(28px,4vw,51px);line-height:1.05;letter-spacing:-.05em}
+.about-copy{color:#c7c7c7;font-size:16px;max-width:700px}
+.about-copy p+p{margin-top:18px}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}
+.skill{padding:19px;border:1px solid var(--line);border-radius:14px;background:var(--surface);font-size:14px}
+.experience{display:grid;grid-template-columns:220px 1fr;gap:35px;padding:25px 0;border-top:1px solid var(--line)}
+.experience:last-child{border-bottom:1px solid var(--line)}
+.exp-number{font-size:42px;font-weight:800;letter-spacing:-.05em;color:var(--accent)}
+.exp-title{font-size:24px;letter-spacing:-.03em}
+.exp-text{color:var(--muted);font-size:14px;margin-top:7px;max-width:760px}
+.contact-box{background:var(--accent);color:#080808;border-radius:24px;padding:55px}
+.contact-box h2{max-width:700px}
+.contact-box p{max-width:600px;margin:20px 0;color:#222}
+.contact-box .btn{border-color:#080808;color:#080808}
+footer{padding:45px 0;color:#777;font-size:12px}
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:100;
+  display:none;align-items:center;justify-content:center;padding:30px
+}
+.lightbox.open{display:flex}
+.lightbox img{max-width:92vw;max-height:88vh;object-fit:contain}
+.close{position:absolute;right:25px;top:20px;background:none;border:0;color:white;font-size:34px;cursor:pointer}
+.image-hint{font-size:12px;color:#777;margin-top:15px}
+@media(max-width:900px){
+  .nav-links{display:none}.menu{display:block}
+  .grid{grid-template-columns:1fr}
+  .vertical-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .about-grid{grid-template-columns:1fr;gap:35px}
+  .skills{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .container{width:min(var(--max),calc(100% - 30px))}
+  .nav-inner{height:65px}
+  .hero{padding-top:115px}
+  section{padding:75px 0}
+  .section-head{display:block}
+  .section-intro{margin-top:18px}
+  .vertical-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .skills{grid-template-columns:1fr}
+  .experience{grid-template-columns:1fr;gap:8px}
+  .contact-box{padding:32px 25px}
+}
+</style>
+</head>
+
+<body>
+
+<nav class="nav">
+  <div class="container nav-inner">
+    <a class="logo" href="#top">YOUR<span>NAME</span></a>
+    <div class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#vertical">Vertical</a>
+      <a href="#design">Design</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <button class="menu" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main id="top">
+
+<header class="hero">
+  <div class="container">
+    <div class="kicker">Motion • Video • Design • Branding</div>
+    <h1>Visuals that<br>move people.</h1>
+    <p class="hero-sub">Motion Graphics Artist · Video Editor · Visual Branding Specialist</p>
+    <p class="hero-note">
+      7+ years of experience creating motion, video, graphic design and visual communication
+      for healthcare, medical, corporate and consumer brands.
+    </p>
+    <div class="buttons">
+      <a class="btn primary" href="#work">VIEW MY WORK ↓</a>
+      <a class="btn" href="Sanket_Reddy_CV.pdf" download>DOWNLOAD CV</a>
+      <a class="btn" href="mailto:your@email.com">CONTACT ME</a>
+    </div>
+  </div>
+</header>
+
+<section id="work">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">01 / Featured</div><h2>Selected work.</h2></div>
+      <p class="section-intro">A selection of brand films, corporate films, product videos and motion-led storytelling.</p>
+    </div>
+
+    <div class="feature">
+      <div class="video-wrap">
+        <!-- Replace TSYDmpnncAY with your YouTube video ID -->
+        <iframe src="https://www.youtube.com/embed/TSYDmpnncAY" title="Featured project" allowfullscreen></iframe>
+      </div>
+      <div class="project-info">
+        <h3>Featured Project / Showreel</h3>
+        <p>Replace this with your strongest project and a short description.</p>
+      </div>
+    </div>
+
+    <div style="height:28px"></div>
+
+    <div class="grid">
+      <!-- HORIZONTAL VIDEO 1 -->
+      <article class="card">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/O4L3UTGvwuc" title="Horizontal project 1" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Healthcare Brand Film</h3><p>Corporate storytelling • Healthcare</p></div>
+      </article>
+
+      <!-- HORIZONTAL VIDEO 2 -->
+      <article class="card">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/kbIijdM8oic" title="Horizontal project 2" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Product Advertisement</h3><p>Product film • Advertising</p></div>
+      </article>
+
+      <!-- HORIZONTAL VIDEO 3 -->
+      <article class="card">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/Y-zX0BxDzeQ" title="Horizontal project 3" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Motion Graphics Film</h3><p>Motion design • Visual storytelling</p></div>
+      </article>
+
+      <!-- HORIZONTAL VIDEO 4 -->
+      <article class="card">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/PafYbrRtMOI" title="Horizontal project 4" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Corporate Communication</h3><p>Brand communication • Video</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="vertical">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">02 / Short-form</div><h2>Vertical work.</h2></div>
+      <p class="section-intro">9:16 work for social media, reels, shorts, campaigns and mobile-first storytelling.</p>
+    </div>
+
+    <div class="vertical-grid">
+      <!-- VERTICAL VIDEO 1 -->
+      <article class="card vertical">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/b__-O2-2rq8" title="Vertical project 1" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Social Campaign</h3><p>9:16 • Short-form</p></div>
+      </article>
+
+      <!-- VERTICAL VIDEO 2 -->
+      <article class="card vertical">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/TvROaRz6d-w" title="Vertical project 2" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Product Reel</h3><p>9:16 • Product</p></div>
+      </article>
+
+      <!-- VERTICAL VIDEO 3 -->
+      <article class="card vertical">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/labN3TXCwRA" title="Vertical project 3" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Healthcare Short</h3><p>9:16 • Healthcare</p></div>
+      </article>
+
+      <!-- VERTICAL VIDEO 4 -->
+      <article class="card vertical">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/YJPWQzop0CM" title="Vertical project 4" allowfullscreen></iframe></div>
+        <div class="project-info"><h3>Motion Reel</h3><p>9:16 • Motion graphics</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="design">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">03 / Design</div><h2>Print & visuals.</h2></div>
+      <p class="section-intro">Graphic design, print, packaging, campaign creatives and visual branding.</p>
+    </div>
+
+    <div class="image-grid">
+      <!-- Replace these image paths with your uploaded GitHub images -->
+      <div class="image-card" onclick="openLightbox('images/design-01.jpg')">
+        <img src="images/design-01.jpg" alt="Design project 1" loading="lazy">
+        <div class="image-caption">Print / Graphic Design</div>
+      </div>
+      <div class="image-card" onclick="openLightbox('images/design-02.jpg')">
+        <img src="images/design-02.jpg" alt="Design project 2" loading="lazy">
+        <div class="image-caption">Branding / Campaign</div>
+      </div>
+      <div class="image-card" onclick="openLightbox('images/design-03.jpg')">
+        <img src="images/design-03.jpg" alt="Design project 3" loading="lazy">
+        <div class="image-caption">Packaging / Product</div>
+      </div>
+      <div class="image-card" onclick="openLightbox('images/design-04.jpg')">
+        <img src="images/design-04.jpg" alt="Design project 4" loading="lazy">
+        <div class="image-caption">Poster / Creative</div>
+      </div>
+      <div class="image-card" onclick="openLightbox('images/design-05.jpg')">
+        <img src="images/design-05.jpg" alt="Design project 5" loading="lazy">
+        <div class="image-caption">Social Media Creative</div>
+      </div>
+      <div class="image-card" onclick="openLightbox('images/design-06.jpg')">
+        <img src="images/design-06.jpg" alt="Design project 6" loading="lazy">
+        <div class="image-caption">Visual Communication</div>
+      </div>
+    </div>
+    <p class="image-hint">Tip: upload your images into an <b>images</b> folder in your GitHub repository.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">04 / Profile</div><h2>About me.</h2></div>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-big">A multidisciplinary creative with a strong understanding of both motion and design.</div>
+      <div class="about-copy">
+        <p>I have 7+ years of experience across motion graphics, video editing, graphic design, print design, visual branding and creative communication.</p>
+        <p>Healthcare and medical brands are a particular area of expertise. I understand the visual sensibilities, communication requirements and professional expectations involved in presenting healthcare products and information clearly and responsibly.</p>
+        <p>I can handle multiple creative roles across a project, communicate confidently in English, and deliver high-quality work within demanding and short turnaround times.</p>
+      </div>
+    </div>
+
+    <div class="skills">
+      <div class="skill">Motion Graphics</div>
+      <div class="skill">Video Editing</div>
+      <div class="skill">Brand Films</div>
+      <div class="skill">Corporate Films</div>
+      <div class="skill">Healthcare Communication</div>
+      <div class="skill">Product Advertising</div>
+      <div class="skill">Graphic Design</div>
+      <div class="skill">Print Design</div>
+      <div class="skill">Visual Branding</div>
+      <div class="skill">Creative Strategy</div>
+      <div class="skill">Presentation Design</div>
+      <div class="skill">Visual Storytelling</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">05 / Experience</div><h2>What I bring.</h2></div>
+    </div>
+
+    <div class="experience">
+      <div class="exp-number">7+</div>
+      <div><div class="exp-title">Years of creative experience</div><div class="exp-text">Professional experience across motion, video, graphic design, print and brand communication.</div></div>
+    </div>
+    <div class="experience">
+      <div class="exp-number">01</div>
+      <div><div class="exp-title">Healthcare expertise</div><div class="exp-text">Hands-on experience with healthcare and medical brands, including product-focused and corporate communication.</div></div>
+    </div>
+    <div class="experience">
+      <div class="exp-number">360°</div>
+      <div><div class="exp-title">Multidisciplinary capability</div><div class="exp-text">Able to move between concept, design, animation, editing, print and final delivery depending on the project's needs.</div></div>
+    </div>
+    <div class="experience">
+      <div class="exp-number">FAST</div>
+      <div><div class="exp-title">Short-turnaround delivery</div><div class="exp-text">Comfortable handling multiple priorities and delivering polished creative work under tight timelines.</div></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div><div class="eyebrow">06 / Tools</div><h2>Software.</h2></div>
+    </div>
+    <div class="skills">
+      <div class="skill">Adobe After Effects</div>
+      <div class="skill">Adobe Premiere Pro</div>
+      <div class="skill">Adobe Photoshop</div>
+      <div class="skill">Adobe Illustrator</div>
+      <div class="skill">CorelDRAW</div>
+      <div class="skill">Microsoft PowerPoint</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="contact-box">
+      <div class="eyebrow">07 / Contact</div>
+      <h2>Let's create something worth watching.</h2>
+      <p>Available for motion graphics, video editing, brand films, healthcare communication, visual branding and design projects.</p>
+      <div class="buttons">
+        <a class="btn" href="mailto:your@email.com">EMAIL ME</a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LINKEDIN</a>
+        <a class="btn" href="Sanket_Reddy_CV.pdf" download>DOWNLOAD CV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">© 2026 Your Name. All rights reserved.</div>
+</footer>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="close" onclick="closeLightbox()">×</button>
+  <img id="lightboxImage" src="" alt="Full size design preview">
+</div>
+
+<script>
+function openLightbox(src){
+  document.getElementById('lightboxImage').src=src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function closeLightbox(e){
+  if(!e || e.target.id==='lightbox' || e.target.classList.contains('close')){
+    document.getElementById('lightbox').classList.remove('open');
+  }
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') document.getElementById('lightbox').classList.remove('open');
+});
+</script>
+
+</body>
+</html>
